@@ -2,21 +2,23 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const multer = require('multer');
-const upload = multer();
+// const multer = require('multer');
+// const upload = multer();
+var fileUpload= require('express-fileupload');
+app.use(fileUpload());
 
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(upload.array());
+// app.use(upload.array());
 
 app.get('/', (req, res) => {
   res.send("Hi")
 });
 
 
-app.post('/upload-image', (req, res) => {
+app.post('/upload-image',(req, res) => {
   console.log(req);
   // var file = 'uploads' + '/' + req.file.originalname;
   // fs.rename(req.file.path, file, function(err) {
