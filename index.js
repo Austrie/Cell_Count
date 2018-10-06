@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/upload-image',upload.single('file'), (req, res) => {
+app.post('/upload-image', (req, res) => {
   console.log(req);
   // var file = 'uploads' + '/' + req.file.originalname;
   // fs.rename(req.file.path, file, function(err) {
