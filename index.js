@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 
-app.get('/' (req, res) => {
+app.get('/', (req, res) => {
   res.send("Hi")
-})
+});
 
 
 app.post('/upload-image',upload.single('file'), (req, res) => {
